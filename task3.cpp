@@ -1,46 +1,46 @@
 #include<iostream>
-#include<windows.h>
 using namespace std;
-void gotoxy(int x,int y)
- {
-COORD coordinates;
-coordinates.X = x;
-coordinates.Y = y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
-}
-void printmaze()
-{
-cout<<"#######################"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#                     #"<<endl;
-cout<<"#######################"<<endl;
-}
-void movePlayer(int x, int y)
-{
-gotoxy(x,y);
-cout<< "P"<<endl;
-Sleep(100);
-gotoxy(x,y);
-cout<<" ";
-}
+void priceafterdiscount(string name,float ticketprice);
+
 main()
 {
-    int x=4,y=4;
-    system("cls");
-    printmaze();
-    while(true)
-    {
-            movePlayer(x, y);
-            x=x+1;
-            if(x==21)
-            {
-                   x=4
-            }
-    }
+string name;
+float ticketprice;
+cout<<"Enter the country's name: ";
+cin>>name;
+cout<<"Enter the ticket price in dollars: $";
+cin>>ticketprice;
+priceafterdiscount(name,ticketprice);
 
+
+
+}
+void priceafterdiscount(string name,float ticketprice)
+{
+float priceafterdiscount;
+if(name=="Pakistan")
+   {
+    priceafterdiscount=ticketprice-ticketprice*5/100;
+    cout<<"Final ticket price after discount: $"<<priceafterdiscount<<endl;
+    }
+if(name=="India")
+    {
+    priceafterdiscount=ticketprice-ticketprice*20/100;
+    cout<<"Final ticket price after discount: $"<<priceafterdiscount<<endl;
+    }
+if(name=="Ireland")
+ {
+    priceafterdiscount=ticketprice-ticketprice*10/100;
+    cout<<"Final ticket price after discount: $"<<priceafterdiscount<<endl;
+    }
+if(name=="Canada")
+ {
+    priceafterdiscount=ticketprice-ticketprice*45/100;
+    cout<<"Final ticket price after discount: $"<<priceafterdiscount<<endl;
+    }
+if(name=="England")
+ {
+    priceafterdiscount=ticketprice-ticketprice*30/100;
+    cout<<"Final ticket price after discount: $"<<priceafterdiscount<<endl;
+    }
 }
